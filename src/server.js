@@ -42,8 +42,7 @@ const onRequest = (request, response) => {
     const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
   
     request.query = Object.fromEntries(parsedUrl.searchParams);
-    
-    console.log(request.method);
+
 
     if(request.method === "POST") {
         if(postUrlStruct[parsedUrl.pathname]) {
